@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // TODO: ask the internet to give me some songs
+    getIt<HomeScreenManager>().updateSongs();
   }
 
   @override
@@ -21,13 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: ValueListenableBuilder<List<String>>(
           valueListenable: getIt<HomeScreenManager>().songListNotifier,
-          builder: (context, value, child) {
+          builder: (context, songList, child) {
             return ListView.builder(
-              itemCount: 3,
+              itemCount: songList.length,
               itemBuilder: (context, index) {
-                return const Card(
+                return Card(
                   child: ListTile(
-                    title: Text('Song Name'),
+                    title: Text(songList[index]),
                   ),
                 );
               },

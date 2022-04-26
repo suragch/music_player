@@ -6,4 +6,9 @@ class HomeScreenManager {
   final songListNotifier = ValueNotifier<List<String>>([]);
 
   final songApi = getIt<SongApi>();
+
+  Future<void> updateSongs() async {
+    final songs = await songApi.getSongs();
+    songListNotifier.value = songs;
+  }
 }
