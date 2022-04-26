@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/home_screen/home_screen_manager.dart';
+import 'package:music_player/music_player_screen/music_player_screen.dart';
 import 'package:music_player/service_locator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,6 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Card(
                   child: ListTile(
                     title: Text(songList[index]),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MusicPlayerScreen()),
+                      );
+                    },
                   ),
                 );
               },
