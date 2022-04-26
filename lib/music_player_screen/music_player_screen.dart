@@ -7,8 +7,12 @@ class MusicPlayerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Music Player')),
-      body: Container(
-        color: Colors.amber,
+      body: const Image(
+        image: AssetImage('assets/music.jpg'),
+        fit: BoxFit.cover,
+        height: double.infinity,
+        width: double.infinity,
+        alignment: Alignment.center,
       ),
     );
   }
