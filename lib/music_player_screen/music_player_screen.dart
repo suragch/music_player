@@ -46,6 +46,9 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
                   ProgressBar(
                     progress: Duration(minutes: 1),
                     total: Duration(minutes: 3, seconds: 30),
+                    onSeek: (duration) {
+                      manager.seek(duration);
+                    },
                   ),
                   ValueListenableBuilder<PlayingState>(
                     valueListenable: manager.playingStateNotifier,

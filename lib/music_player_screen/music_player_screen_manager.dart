@@ -32,4 +32,8 @@ class MusicPlayerScreenManager {
     player.pause();
     playingStateNotifier.value = PlayingState.paused;
   }
+
+  void seek(Duration duration) {
+    player.seek(duration);
+  }
 }
